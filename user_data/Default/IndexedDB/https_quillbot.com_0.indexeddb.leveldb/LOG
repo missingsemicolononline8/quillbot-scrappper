@@ -1,0 +1,5 @@
+2023/07/21-20:19:18.001 451c Reusing MANIFEST C:\Web Dev\projects\Node\Cherrio-Puppeter Scrappers\quillbot scrappper\user_data\Default\IndexedDB\https_quillbot.com_0.indexeddb.leveldb/MANIFEST-000001
+2023/07/21-20:19:18.003 451c Recovering log #13
+2023/07/21-20:19:18.007 451c Reusing old log C:\Web Dev\projects\Node\Cherrio-Puppeter Scrappers\quillbot scrappper\user_data\Default\IndexedDB\https_quillbot.com_0.indexeddb.leveldb/000013.log 
+2023/07/21-20:19:18.008 451c Delete type=2 #11
+2023/07/21-20:19:18.697 401c Manual compaction at level-0 from '\x00\x08\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x09\x00\x00\x00' @ 0 : 0; will stop at (end)
