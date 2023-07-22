@@ -1,9 +1,15 @@
 import express from 'express'
 import rewrite from './rewrite.js'
 const app = express()
-const port = 3000
+const port = 10000
 
 app.get('/', (req, res) => {
+  
+  res.send("Hello")
+  
+})
+
+app.get('/scrape', (req, res) => {
   let textToSpin = `A stray dog was found carrying a newborn baby girl in a trash bag through the streets of Tripoli, in Lebanon on Wednesday, New York Post reported. The baby was left outside a municipal building in Lebanon.
   A passerby saw the dog carrying the bag after he heard a baby's cries, he managed to take the bag from the dog and found the infant inside. Arab News reported that the baby had bruises all over her body and was taken to the Islamic Charity Hospital, then transferred to the Tripoli Governmental Hospital after security services and judicial authorities were informed.
   

@@ -50,6 +50,7 @@ await page.click(searchResultSelector);
   }
   finally {
     await browser.close()
+    res.send("")
   }
 };
 
