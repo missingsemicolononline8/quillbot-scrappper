@@ -25,16 +25,18 @@ const rewrite = async (res,textToSpin,headless) => {
     await page.setViewport({width: 1080, height: 1024});
   
     // Type into search box
-    await page.type('.search-box__input', 'automate beyond recorder');
+    await page.type('.search-box__input', 'automate');
   
     // Wait and click on first result
     const searchResultSelector = '.search-box__link';
-    await page.waitForSelector(searchResultSelector);
+    await page.waitForSelector(searchResultSelector, {
+      timeout:0
+    });
     await page.click(searchResultSelector);
   
     // Locate the full title with a unique string
     const textSelector = await page.waitForSelector(
-      'text/Customize and automate'
+      '.type--h1'
     );
     const fullTitle = await textSelector?.evaluate(el => el.textContent);
   
