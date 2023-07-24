@@ -13,7 +13,6 @@ const rewrite = async (res,textToSpin,headless) => {
       "--no-zygote"
     ],
     headless:headless, 
-    userDataDir: "./user_data",
     executablePath: process.env.NODE_ENV === 'production' ? process.env.PUPPETEER_EXECUTABLE_PATH : puppeteer.executablePath()});
   
   try {
