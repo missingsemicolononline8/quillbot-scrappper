@@ -18,7 +18,7 @@ const rewrite = async (res,textToSpin,headless) => {
   try {
   const page = await browser.newPage();
 
-  await page.goto(url,{ waitUntil: 'networkidle2' });
+  await page.goto(url);
 
   // Set screen size
   await page.setViewport({width: 1020, height: 1080});
