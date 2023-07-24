@@ -25,29 +25,26 @@ const rewrite = async (res,textToSpin,headless) => {
   const searchBarSelector = 'div[data-testid="editable-content-within-article"]';
   const searchResultSelector = 'div[aria-label="Paraphrase (Ctrl + Enter)"] button';
  
-  // Type into search box
-
+  
   await page.waitForSelector(searchBarSelector,{
     timeout:0
   });
+ // Type into search box
  await page.type(searchBarSelector, textToSpin)
  await page.waitForSelector(searchResultSelector,{
-        timeout:0
-      });
+   timeout:0
+ });
 await delay(2)     
 await page.click(searchResultSelector);
-  
+    
+const copyButtonSelector = "button[aria-label='Copy Full Text']"
+await page.waitForSelector(copyButtonSelector)
 
-  // Wait and click on first result
-  
-  const copyButtonSelector = "button[aria-label='Copy Full Text']"
-  await page.waitForSelector(copyButtonSelector)
-
+const textSelector = await page.waitForSelector(
+  'div#paraphraser-output-box[contenteditable="true"]'
+);
   // Locate the full title with a unique string
-  const textSelector = await page.waitForSelector(
-    'div#paraphraser-output-box[contenteditable="true"]'
-  );
-  const fullTitle = await textSelector?.evaluate(el => el.textContent);
+  const fullTitle = await textSelector.evaluate(el => el.textContent);
 
   // Print the full title
   console.log('The title of this blog post is "%s".', fullTitle);
@@ -55,7 +52,7 @@ await page.click(searchResultSelector);
   res.send(fullTitle);
   }
   catch (e) {
-      res.send(`Something got fucked up: ${e}`);
+      res.send(`Something got fucked up: ${e.stack}`);
   }
   finally {
     await browser.close()
