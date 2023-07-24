@@ -18,37 +18,29 @@ const rewrite = async (res,textToSpin,headless) => {
   try {
   const page = await browser.newPage();
 
-  await page.goto(url);
+  // Navigate the page to a URL
+  await page.goto('https://developer.chrome.com/');
 
   // Set screen size
-  await page.setViewport({width: 1020, height: 1080});
-  const searchBarSelector = 'div[data-testid="editable-content-within-article"]';
-  const searchResultSelector = 'div[aria-label="Paraphrase (Ctrl + Enter)"] button';
- 
-  
-  await page.waitForSelector(searchBarSelector,{
-    timeout:0
-  });
- // Type into search box
- await page.type(searchBarSelector, textToSpin)
- await page.waitForSelector(searchResultSelector,{
-   timeout:0
- });
-await delay(2)     
-await page.click(searchResultSelector);
-    
-const copyButtonSelector = "button[aria-label='Copy Full Text']"
-await page.waitForSelector(copyButtonSelector)
+  await page.setViewport({width: 1080, height: 1024});
 
-const textSelector = await page.waitForSelector(
-  'div#paraphraser-output-box[contenteditable="true"]'
-);
+  // Type into search box
+  await page.type('.search-box__input', 'automate beyond recorder');
+
+  // Wait and click on first result
+  const searchResultSelector = '.search-box__link';
+  await page.waitForSelector(searchResultSelector);
+  await page.click(searchResultSelector);
+
   // Locate the full title with a unique string
-  const fullTitle = await textSelector.evaluate(el => el.textContent);
+  const textSelector = await page.waitForSelector(
+    'text/Customize and automate'
+  );
+  const fullTitle = await textSelector?.evaluate(el => el.textContent);
 
-  // Print the full title
   console.log('The title of this blog post is "%s".', fullTitle);
-  //await browser.close()
+
+//await browser.close()
   res.send(fullTitle);
   }
   catch (e) {
