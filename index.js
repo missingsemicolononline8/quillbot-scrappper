@@ -1,5 +1,5 @@
-import express from 'express'
-import rewrite from './rewrite.js'
+const express = require('express')
+const rewrite = require('./rewrite.js')
 const app = express()
 const port = 10000
 

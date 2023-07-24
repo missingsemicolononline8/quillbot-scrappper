@@ -1,14 +1,14 @@
-2023/07/23-05:14:48.462 4298 Reusing MANIFEST C:\Web Dev\projects\Node\Cherrio-Puppeter Scrappers\quillbot scrappper - render\user_data\Default\IndexedDB\https_quillbot.com_0.indexeddb.leveldb/MANIFEST-000001
-2023/07/23-05:14:48.463 4298 Recovering log #17
-2023/07/23-05:14:48.464 4298 Reusing old log C:\Web Dev\projects\Node\Cherrio-Puppeter Scrappers\quillbot scrappper - render\user_data\Default\IndexedDB\https_quillbot.com_0.indexeddb.leveldb/000017.log 
-2023/07/23-05:14:48.465 4298 Delete type=2 #15
-2023/07/23-05:14:48.729 510c Level-0 table #22: started
-2023/07/23-05:14:48.738 510c Level-0 table #22: 89982 bytes OK
-2023/07/23-05:14:48.741 510c Delete type=0 #17
-2023/07/23-05:14:48.756 4298 Manual compaction at level-0 from '\x00\x0a\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x0b\x00\x00\x00' @ 0 : 0; will stop at '\x00\x0a\x00\x00\x05' @ 2973 : 1
-2023/07/23-05:14:48.756 4298 Compacting 1@0 + 1@1 files
-2023/07/23-05:14:48.765 4298 Generated table #23@0: 825 keys, 110754 bytes
-2023/07/23-05:14:48.766 4298 Compacted 1@0 + 1@1 files => 110754 bytes
-2023/07/23-05:14:48.766 4298 compacted to: files[ 0 1 1 0 0 0 0 ]
-2023/07/23-05:14:48.767 4298 Delete type=2 #22
-2023/07/23-05:14:48.767 4298 Manual compaction at level-0 from '\x00\x0a\x00\x00\x05' @ 2973 : 1 .. '\x00\x0b\x00\x00\x00' @ 0 : 0; will stop at (end)
+2023/07/24-18:00:03.230 26a8 Reusing MANIFEST C:\Web Dev\projects\Node\Cherrio-Puppeter Scrappers\quillbot scrappper - render\user_data\Default\IndexedDB\https_quillbot.com_0.indexeddb.leveldb/MANIFEST-000001
+2023/07/24-18:00:03.230 26a8 Recovering log #29
+2023/07/24-18:00:03.232 26a8 Reusing old log C:\Web Dev\projects\Node\Cherrio-Puppeter Scrappers\quillbot scrappper - render\user_data\Default\IndexedDB\https_quillbot.com_0.indexeddb.leveldb/000029.log 
+2023/07/24-18:00:03.232 26a8 Delete type=2 #27
+2023/07/24-18:00:03.683 4be0 Level-0 table #34: started
+2023/07/24-18:00:03.690 4be0 Level-0 table #34: 16829 bytes OK
+2023/07/24-18:00:03.691 4be0 Delete type=0 #29
+2023/07/24-18:00:03.700 56f4 Manual compaction at level-0 from '\x00\x0d\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x0e\x00\x00\x00' @ 0 : 0; will stop at '\x00\x0d\x00\x00\x05' @ 3984 : 1
+2023/07/24-18:00:03.700 56f4 Compacting 1@0 + 1@1 files
+2023/07/24-18:00:03.711 56f4 Generated table #35@0: 931 keys, 106355 bytes
+2023/07/24-18:00:03.712 56f4 Compacted 1@0 + 1@1 files => 106355 bytes
+2023/07/24-18:00:03.712 56f4 compacted to: files[ 0 1 1 0 0 0 0 ]
+2023/07/24-18:00:03.713 56f4 Delete type=2 #34
+2023/07/24-18:00:03.713 56f4 Manual compaction at level-0 from '\x00\x0d\x00\x00\x05' @ 3984 : 1 .. '\x00\x0e\x00\x00\x00' @ 0 : 0; will stop at (end)

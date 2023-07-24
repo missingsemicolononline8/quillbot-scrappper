@@ -1,10 +1,20 @@
-import puppeteer from "puppeteer";
+const puppeteer = require("puppeteer");
+require("dotenv").config()
 
 let url = "https://quillbot.com/";
 const delay = (seconds) => new Promise((resolve) => setTimeout(resolve, seconds*1000));
 
 const rewrite = async (res,textToSpin,headless) => {
-  const browser = await puppeteer.launch({headless:headless, userDataDir: "./user_data"});
+  const browser = await puppeteer.launch({
+    args:[
+      "--disable-setuid-sandbox",
+      "--no-sandbox",
+      "--single-process",
+      "--no-zygote"
+    ],
+    headless:headless, 
+    userDataDir: "./user_data",
+    executablePath: process.env.NODE_ENV === 'production' ? process.env.PUPPETEER_EXECUTABLE_PATH : puppeteer.executablePath()});
   
   try {
   const page = await browser.newPage();
@@ -50,8 +60,7 @@ await page.click(searchResultSelector);
   }
   finally {
     await browser.close()
-    res.send("")
   }
 };
 
-export default rewrite;
+module.exports = rewrite;
