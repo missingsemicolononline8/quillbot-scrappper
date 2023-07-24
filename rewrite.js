@@ -19,32 +19,13 @@ const rewrite = async (res,textToSpin,headless) => {
     const page = await browser.newPage();
 
     // Navigate the page to a URL
-    await page.goto('https://developer.chrome.com/');
-  
-    // Set screen size
-    await page.setViewport({width: 1080, height: 1024});
-  
-    // Type into search box
-    await page.type('.search-box__input', 'automate');
-  
-    // Wait and click on first result
-    const searchResultSelector = '.search-box__link';
-    await page.waitForSelector(searchResultSelector, {
-      timeout:0
+    await page.goto('https://developer.chrome.com/', {
+      waitUntil: "networkidle2"
     });
-    await page.click(searchResultSelector);
+
+
   
-    // Locate the full title with a unique string
-    const textSelector = await page.waitForSelector(
-      '.type--h1'
-    );
-    const fullTitle = await textSelector?.evaluate(el => el.textContent);
-  
-    // Print the full title
-    console.log('The title of this blog post is "%s".', fullTitle);
-  
-    await browser.close();
-  res.send(fullTitle);
+  res.send("browser opened");
   }
   catch (e) {
       res.send(`Something got fucked up: ${e.stack}`);
