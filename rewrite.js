@@ -2,7 +2,12 @@ const puppeteer = require("puppeteer");
 require("dotenv").config()
 
 let url = "https://quillbot.com/";
-const delay = (seconds) => new Promise((resolve) => setTimeout(resolve, seconds*1000));
+const delay = (seconds) => new Promise(function(resolve,reject) { 
+  setTimeout(() => {
+    resolve(1)
+  }, seconds*1000);
+  
+});
 
 const rewrite = async (res,textToSpin,headless) => {
   const browser = await puppeteer.launch({
@@ -16,8 +21,9 @@ const rewrite = async (res,textToSpin,headless) => {
     executablePath: process.env.NODE_ENV === 'production' ? process.env.PUPPETEER_EXECUTABLE_PATH : puppeteer.executablePath()});
   
   try {
+    await delay(2);
     const page = await browser.newPage();
-
+    await delay(2);
     // Navigate the page to a URL
     await page.goto('https://developer.chrome.com/', {
       waitUntil: "networkidle2"
